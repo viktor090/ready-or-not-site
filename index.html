@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready or Not</title>
+
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+	button {
+	    background-color: red;
+	    color: white;
+	    border: none;
+	    padding: 10px 20px;
+	    font-size: 16px;
+	}
+
+        h1 {
+            color: red;
+        }
+        h2 {
+        color: lightgray;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Ready or Not</h1>
+    <h2>Тактический шутер, который держит в напряжении</h2>
+    <img src="ready1.png" width="400">
+    <img src="ready2.png" width="500">
+    <p>Это мой первый сайт про игру Ready or Not.</p>
+    <p>Мне нравится эта игра, потому что она реалистичная и напряженная.</p>
+    <button onclick="showMessage()">Моя любимая миссия</button>
+    <p id="message"></p>
+
+    <script>
+    function showMessage() {
+        document.getElementById("message").innerText = "Мне нравится миссия New America, она очень напряженная и тяжелая.";
+    }
+</script>
+
+</body>
+</html>
