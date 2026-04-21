@@ -5,47 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ready or Not</title>
 
-
     <style>
         body {
-            background-color: black;
+            background-color: #111111;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 20px;
         }
 
-	button {
-	    background-color: red;
-	    color: white;
-	    border: none;
-	    padding: 10px 20px;
-	    font-size: 16px;
+        button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+	img {
+	    width: 100%;
+	    max-width: 320px;
+	    border: 3px solid red;
+	    border-radius: 12px;
+	    margin: 10px;
+	    display: block;
+	    margin: 15px auto;
+
+	}
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #1c1c1c;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #333333;
+            margin-top: 20px;
+	    box-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
+        }
+
+	.image-box {
+	    margin-bottom: 20px;
 	}
 
         h1 {
             color: red;
+            font-size: 48px;
+            margin-bottom: 10px;
         }
-        h2 {
-        color: lightgray;
-        }
-    </style>
 
+        h2 {
+            color: lightgray;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+	h3 {
+	    color: red;
+	    font-size: 24px;
+	    margin-botom: 15px;
+	}
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+	@media (max-width: 600px) {
+	    h1 {
+		font-size: 36px;
+	    }
+	    h2 {
+		font-size: 22px;
+	    }
+	    h3 {
+		font-size: 20px;
+	    }
+	    p {
+		font-size: 18px;
+	    }
+
+	    button {
+		width: 100%;
+		max-width: 300px;
+	    }
+	}
+    </style>
 </head>
 <body>
-    <h1>Ready or Not</h1>
-    <h2>Тактический шутер, который держит в напряжении</h2>
-    <img src="ready1.png" width="400">
-    <img src="ready2.png" width="500">
-    <p>Это мой первый сайт про игру Ready or Not.</p>
-    <p>Мне нравится эта игра, потому что она реалистичная и напряженная.</p>
-    <button onclick="showMessage()">Моя любимая миссия</button>
-    <p id="message"></p>
+    <div class="container">
+        <h1>Ready or Not</h1>
+        <h2>Тактический шутер, который держит в напряжении</h2>
 
-    <script>
-    function showMessage() {
-        document.getElementById("message").innerText = "Мне нравится миссия New America, она очень напряженная и тяжелая.";
-    }
-</script>
+	<div class="image-box">
+        <img src="ready1.png" alt="Ready or Not">
+        <img src="ready2.png" alt="Ready or Not">
+	</div>
 
+        <div class="card">
+            <p>Это мой первый сайт про игру Ready or Not.</p>
+            <p>Мне нравится эта игра, потому что она реалистичная и напряженная.</p>
+            <button onclick="showMessage()">Моя любимая миссия</button>
+            <p id="message"></p>
+        </div>
+
+	<div class="card">
+	   <h3>О чем игра</h3>
+	   <p>Ready or Not - ето тактический шутер, где нужно акуратно зачищать здания, спасать заложников и действовать как настоящий спецназ.</p>
+	</div>
+
+	<div class="card">
+	   <h3>Почему мне нравится ета игра</h3>
+	   <p>Мне нравится что в игре очень сильно нужна внимательность и осторожность, командная работа и атмосфера. Каждая миссия может пройти совсем по-разному.</p>
+	</div>
+
+        <script>
+            function showMessage() {
+                document.getElementById("message").innerText = "Мне нравится миссия New America, она очень напряженная и тяжелая.";
+            }
+        </script>
+    </div>
 </body>
 </html>
