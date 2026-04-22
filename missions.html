@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои любимые миссии</title>
+
+    <style>
+        body {
+            background-color: #111111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+	    transition: background-color 1s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #1c1c1c;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #333333;
+            margin-top: 20px;
+            box-shadow: 0 0 35px rgba(255, 0, 0, 0.45);
+        }
+
+	.image-box {
+	    display: flex;
+	    justify-content: center;
+	    gap: 20px;
+	    flex-wrap: wrap;
+	    margin-top: 20px;
+	}
+
+	img {
+	    width: 100%;
+	    max-width: 320px;
+	    border: 3px solid red;
+	    border-radius: 12px;
+	    display: block;
+	    margin: 15px auto;
+	    transition: transform 0.5s ease, box-shadow 0.5s ease;
+	}
+
+	img:hover{
+	    transform: scale(1.09);
+	    box-shadow: 0 0 25px rgba(255, 0, 0, 0.45);
+	}
+
+        h1 {
+            color: red;
+            font-size: 42px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+	.theme-button {
+	    position: fixed;
+	    top: 20px;
+	    right: 20px;
+	    background-color: red;
+	    color: white;
+	    border: none;
+	    padding: 12px 18px;
+	    border-radius: 10px;
+	    cursor: pointer;
+	    transition: 0.4s;
+	    z-index: 1000;
+	}
+
+	.theme-button:hover {
+	    background-color: darkred;
+	    box-shadow: 0 0 15px red;
+	    transform: scale(1.09);
+	}
+
+        .nav-button {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: darkred;
+            box-shadow: 0 0 15px red;
+            transform: scale(1.09);
+        }
+
+	.mission-item {
+	    text-align: center;
+	}
+
+	.mission-item p {
+	    margin-top: 10px;
+	    font-size: 18px;
+	}
+    </style>
+</head>
+<body>
+    <button id="themeButton" class="theme-button" onclick="changeBackground()">Сменить фон</button>
+    <div class="container">
+        <h1>Мои любимые миссии</h1>
+
+        <div class="card">
+	    <h3>New America</h3>
+	    <img src="New America.png" alt="New America">
+            <p>Это моя одна из моих самых любимых миссий, потому что она очень напряженная и сложная.</p>
+	</div>
+
+	<div class="card">
+	    <h3>23 Megabytes A Second</h3>
+	    <img src="mision1.png" alt="23 Megabytes A Second">
+            <p>Мне нравится эта миссия из-за атмосферы и того, что проходить ее нужно осторожно и внимательно.</p>
+	</div>
+
+	<div class="card">
+	    <h3>Ends of the Earth</h3>
+	    <img src="mision2.png" alt="Ends of the Earth">
+            <p>Эта миссия запомнилась мне своей атмосферой и тем, как в ней ощущается напряжение.</p>
+        </div>
+
+        <a href="index.html" class="nav-button">Назад на главную</a>
+
+    </div>
+	<script>
+	    function changeBackground() {
+		let button = document.getElementById("themeButton");
+		if (document.body.style.backgroundColor === "rgb(26, 0, 0)") {
+		    document.body.style.backgroundColor = "#111111";
+		    button.innerText = "Сменить фон";
+	        } else {
+		    document.body.style.backgroundColor = "#1a0000";
+		    button.innerText = "Вернуть черный фон";
+		}
+	    }
+	</script>
+		
+</body>
+</html>
