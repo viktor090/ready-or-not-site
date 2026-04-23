@@ -170,34 +170,35 @@
 
 	@media (max-width: 600px) {
 	    .theme-button {
-		position: fixed;
-		bottom: 15px;
-		left: 50%;
-		right: auto;
-		transform: translateX(-50%);
-		margin: 0;
+		position: staric;
+		display: block;
+		width: fit-content;
+		margin: 15px auto;
 		padding: 10px 14px;
 		font-size: 14px
-		z-index: 1000;
 	    }
 
 	    .back-button {
-		position: fixed;
-		top: 15px;
-		right: 15px;
+		position: staric;
+		display: block;
+		width: fit-content;
+		margin: 15px auto;
 		padding: 10px 14px;
-		font-sizze: 14px;
-		z-index: 1000;
+		font-size: 14px
 	    }
 
 	    .theme-button:hover,
 	    .back-button:hover,
 	    button:hover,
-	    .nav-button:hover,
+	    .nav-button:hover {
+		background-color: red;
+		transform: none;
+		box-shadow: none;
+	    }	
+
 	    img:hover {
 		transform: none;
 		box-shadow: none;
-		background-color: red;
 	    }
 
 	    #bg1,
