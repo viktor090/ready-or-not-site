@@ -169,33 +169,29 @@
 	}
 
 	@media (max-width: 600px) {
-	    .theme-button {
-		position: staric;
-		display: block;
-		width: fit-content;
-		margin: 15px auto;
-		padding: 10px 14px;
-		font-size: 14px
+	   .theme-button {
+	        position: fixed;
+        	bottom: 15px;
+        	right: 15px;
+        	left: auto;
+        	margin: 0;
+        	padding: 10px 14px;
+        	font-size: 14px;
+        	z-index: 1000;
 	    }
 
 	    .back-button {
-		position: staric;
-		display: block;
-		width: fit-content;
-		margin: 15px auto;
-		padding: 10px 14px;
-		font-size: 14px
+       		display: block;
+      		width: fit-content;
+       		margin: 20px auto 0;
+       		padding: 10px 14px;
+       		font-size: 14px;
 	    }
 
 	    .theme-button:hover,
 	    .back-button:hover,
 	    button:hover,
-	    .nav-button:hover {
-		background-color: red;
-		transform: none;
-		box-shadow: none;
-	    }	
-
+	    .nav-button:hover,
 	    img:hover {
 		transform: none;
 		box-shadow: none;
