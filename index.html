@@ -53,14 +53,15 @@
   	    position: fixed;
   	    bottom: 20px;
   	    right: 20px;
-  	    background-color: red;
+  	    background-color: rgba(180, 0, 0, 0.9);
  	    color: white;
  	    border: none;
-	    padding: 12px 18px;
+	    padding: 10px 16px;
 	    border-radius: 10px;
 	    cursor: pointer;
  	    transition: 0.3s;
   	    z-index: 1000;
+	    opacity: 0.9;
 	}
 
 	.theme-button:hover {
@@ -154,7 +155,16 @@
         }
 
 	@media (max-width: 600px) {
-	    .theme-button,
+
+	    .theme-button {
+		position: fixed;
+		bottom; 15px;
+		left: 50%;
+		transform: traslateX(-50%);
+		margin: 0;
+		padding: 10px 14px;
+		font-size: 14px;
+
 	    .back-button {
 		position: static;
 		display: block;

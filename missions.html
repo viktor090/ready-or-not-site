@@ -169,18 +169,31 @@
 	}
 
 	@media (max-width: 600px) {
-	    .theme-button,
+	    .theme-button {
+		position: fixed;
+		bottom: 15px;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+		margin: 0;
+		padding: 10px 14px;
+		font-size: 14px
+		z-index: 1000;
+	    }
+
 	    .back-button {
-		position: static;
-		display: block;
-		width: fit-content;
-		margin: 15px auto;
+		position: fixed;
+		top: 15px;
+		right: 15px;
+		padding: 10px 14px;
+		font-sizze: 14px;
+		z-index: 1000;
 	    }
 
 	    .theme-button:hover,
 	    .back-button:hover,
 	    button:hover,
-	    ,nav-button:hover,
+	    .nav-button:hover,
 	    img:hover {
 		transform: none;
 		box-shadow: none;
