@@ -6,15 +6,14 @@
     <title>Ready or Not</title>
 
     <style>
-        body {
-            background-color: #111111;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-	    transition: 1s;
-        }
+       body {
+ 	   color: white;
+       	   font-family: Arial, sans-serif;
+  	   text-align: center;
+	   margin: 0;
+ 	   padding: 20px;
+ 	   background-color: #111111;
+	}
 
         button {
             background-color: red;
@@ -52,7 +51,7 @@
 
 	.theme-button {
   	    position: fixed;
-  	    top: 20px;
+  	    bottom: 20px;
   	    right: 20px;
   	    background-color: red;
  	    color: white;
@@ -99,6 +98,29 @@
             margin-top: 20px;
 	    box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
         }
+
+	#bg1, #bg2 {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background-size: cover;
+	    background-position: center;
+	    background-attachment: fixed;
+	    transition: opacity 1s ease;
+	    z-index: -2;
+	}
+
+	#bg1 {
+	     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("background1.png");
+	     opacity: 1;
+	}
+
+	#bg2 {
+	     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("background2.png");
+             opacity: 0;
+	}
 
 	.image-box {
 	    display: flex;
@@ -149,7 +171,7 @@
 	    align-items: center;
 	}
 
-	    button {
+	    .card button {
 		width: 100%;
 		max-width: 300px;
 	    }
@@ -157,6 +179,10 @@
     </style>
 </head>
 <body>
+    <div id="bg1"></div>
+    <div id="bg2"></div>
+    <button id="themeButton" class="theme-button" onclick="changeBackground()">Сменить фон</button>
+
     <div class="container">
         <h1>Ready or Not</h1>
         <h2>Тактический шутер, который держит в напряжении</h2>
@@ -170,7 +196,6 @@
             <p>Это мой первый сайт про игру Ready or Not.</p>
             <p>Мне нравится эта игра, потому что она реалистичная и напряженная.</p>
             <button onclick="showMessage()">Моя любимая миссия</button>
-	    <button id="themeButton" class="theme-button" onclick="changeBackground()">Сменить фон</button>
 	    <a href="missions.html" class="nav-button">Мои любимые миссии</a>
             <p id="message"></p>
         </div>
@@ -186,22 +211,31 @@
 	</div>
 
         <script>
-            function showMessage() {
-                document.getElementById("message").innerText = "Мне нравится миссия New America, она очень напряженная и тяжелая.";
-	    }
+    let firstBackground = true;
 
-	function changeBackground() {
-   		 let button = document.getElementById("themeButton");
+    function showMessage() {
+        document.getElementById("message").innerText = "Мне нравится миссия New America, она очень напряженная и тяжелая.";
+    }
 
-    		if (document.body.style.backgroundColor === "rgb(26, 0, 0)") {
-        		document.body.style.backgroundColor = "#111111";
-        		button.innerText = "Сменить фон";
-    		} else {
-       			document.body.style.backgroundColor = "#1a0000";
-        		button.innerText = "Вернуть черный фон";
-    		}
-        }            
-        </script>
+
+    function changeBackground() {
+        let button = document.getElementById("themeButton");
+	let bg1 = document.getElementById("bg1");
+	let bg2 = document.getElementById("bg2");
+
+        if (firstBackground) {
+            bg1.style.opacity = "0";
+            bg2.style.opacity = "1";
+            button.innerText = "Вернуть фон";
+            firstBackground = false;
+        } else {
+            bg1.style.opacity = "1";
+            bg2.style.opacity = "0";
+            button.innerText = "Сменить фон";
+       	    firstBackground = true;
+    	       }
+   	 }
+	</script>
     </div>
 </body>
 </html>

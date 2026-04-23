@@ -13,7 +13,7 @@
             text-align: center;
             margin: 0;
             padding: 20px;
-	    transition: background-color 1s ease;
+	    position: relative;
         }
 
         .container {
@@ -23,11 +23,14 @@
 
         .card {
             background-color: #1c1c1c;
-            padding: 25px;
+            padding: 35px;
             border-radius: 15px;
             border: 2px solid #333333;
             margin-top: 20px;
             box-shadow: 0 0 35px rgba(255, 0, 0, 0.45);
+	    max-width: 900px;
+	    margin-left: auto;
+	    margin-right: auto
         }
 
 	.image-box {
@@ -40,7 +43,7 @@
 
 	img {
 	    width: 100%;
-	    max-width: 320px;
+	    max-width: 420px;
 	    border: 3px solid red;
 	    border-radius: 12px;
 	    display: block;
@@ -53,10 +56,46 @@
 	    box-shadow: 0 0 25px rgba(255, 0, 0, 0.45);
 	}
 
+	#bg1, #bg2 {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background-size: cover;
+	    background-position: center;
+	    background-attachment: fixed;
+	    transition: opacity 1s ease;
+	    z-index: 0;
+	    pointer-events: none;
+	}
+
+	.container {
+	    max-width: 1200px;
+	    margin: 0 auto;
+	    position: relative;
+	    z-index: 1;
+	}
+
+ 	#bg1 {
+    	    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("missionbg1.png");
+            opacity: 1;
+	}
+
+	#bg2 {
+   	    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("missionbg2.png");
+    	    opacity: 0;
+	}
+
         h1 {
             color: red;
             font-size: 42px;
         }
+	h3 {
+	    color: red;
+	    font-size: 28px;
+	    margin-bottom: 20px;
+	}
 
         p {
             font-size: 20px;
@@ -65,7 +104,7 @@
 
 	.theme-button {
 	    position: fixed;
-	    top: 20px;
+	    bottom: 20px;
 	    right: 20px;
 	    background-color: red;
 	    color: white;
@@ -100,6 +139,26 @@
             transform: scale(1.09);
         }
 
+	.back-button {
+	    position: fixed;
+	    top: 20px;
+	    right: 20px;
+	    display: inline-block;
+	    background-color: red;
+	    color: white;
+	    text-decoration: none;
+	    padding: 12px 22px;
+	    border-radius: 10px;
+	    transition: 0.4s;
+	    z-index: 1000;
+	}
+
+	.back-button:hover {
+	    background-color: darkred;
+	    box-shadow: 0 0 15px red;
+	    transform: scale(1.09);
+	}
+
 	.mission-item {
 	    text-align: center;
 	}
@@ -111,6 +170,9 @@
     </style>
 </head>
 <body>
+    <div id="bg1"></div>
+    <div id="bg2"></div>
+
     <button id="themeButton" class="theme-button" onclick="changeBackground()">Сменить фон</button>
     <div class="container">
         <h1>Мои любимые миссии</h1>
@@ -133,18 +195,27 @@
             <p>Эта миссия запомнилась мне своей атмосферой и тем, как в ней ощущается напряжение.</p>
         </div>
 
-        <a href="index.html" class="nav-button">Назад на главную</a>
+        <a href="index.html" class="back-button">Назад на главную</a>
 
     </div>
 	<script>
+	    let firstBackground = true;
+
 	    function changeBackground() {
 		let button = document.getElementById("themeButton");
-		if (document.body.style.backgroundColor === "rgb(26, 0, 0)") {
-		    document.body.style.backgroundColor = "#111111";
-		    button.innerText = "Сменить фон";
+		let bg1 = document.getElementById("bg1");
+                let bg2 = document.getElementById("bg2");
+
+		if (firstBackground) {
+		    bg1.style.opacity = "0";
+		    bg2.style.opacity = "1";
+		    button.innerText = "Вернуть фон";
+		    firstBackground = false;
 	        } else {
-		    document.body.style.backgroundColor = "#1a0000";
-		    button.innerText = "Вернуть черный фон";
+		    bg1.style.opacity = "1";
+		    bg2.style.opacity = "0";
+		    button.innerText = "Сменить фон";
+		    firstBackground = true;
 		}
 	    }
 	</script>
